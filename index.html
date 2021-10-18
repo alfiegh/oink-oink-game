@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>pigGame</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Allerta+Stencil&amp;display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Bubbler+One&amp;display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body
+    style="
+      background: linear-gradient(#8577d9 0%, rgb(65, 47, 137) 100%);
+      font-family: 'Allerta Stencil', sans-serif;
+      height: 100vh;
+    "
+  >
+    <nav class="navbar navbar-light navbar-expand-md">
+      <div class="container-fluid">
+        <button
+          data-bs-toggle="collapse"
+          class="navbar-toggler"
+          data-bs-target="#navcol-1"
+        >
+          <span class="visually-hidden">Toggle navigation</span
+          ><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <button
+                class="btn btn-outline-primary"
+                type="button"
+                style="
+                  background: rgba(255, 255, 255, 0.5);
+                  border-style: none;
+                  border-radius: 15px;
+                  margin-right: 10px;
+                  color: rgb(0, 0, 0);
+                "
+                data-toggle="modal"
+                data-target="#howToPlay"
+                data-bs-target="#howToPlay"
+                data-bs-toggle="modal"
+              >
+                How to play
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="btn btn-outline-primary btn--new"
+                type="button"
+                style="
+                  border-style: none;
+                  border-radius: 15px;
+                  background: rgba(255, 255, 255, 0.5);
+                  margin-left: 10px;
+                  color: rgb(0, 0, 0);
+                "
+              >
+                New Game
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container flex-wrap">
+      <div class="row">
+        <div
+          class="col-md-5 d-flex justify-content-center"
+          style="
+            background: rgba(255, 255, 255, 0.6);
+            color: rgb(254, 254, 254);
+            border-radius: 20px;
+          "
+        >
+          <section class="player--0 player--active">
+            <h1
+              class="text-uppercase mt-3"
+              style="text-align: center; color: rgb(82, 72, 72)"
+            >
+              Player 1
+            </h1>
+            <p
+              id="score--0"
+              class="score"
+              style="text-align: center; font-size: 90px"
+            >
+              0
+            </p>
+            <div
+              class="mb-3 current"
+              style="
+                text-align: center;
+                transform-origin: bottom;
+                width: 200px;
+                background: rgba(85, 73, 231, 0.8);
+                border-radius: 20px;
+                color: rgb(255, 255, 255);
+                margin-top: 30vh;
+                padding-top: 10px;
+                padding-bottom: 10px;
+              "
+            >
+              <p
+                class="text-uppercase current-label"
+                style="color: rgb(255, 255, 255); font-size: 20px"
+              >
+                Current
+              </p>
+              <p id="current--0" class="current-score" style="font-size: 40px">
+                0
+              </p>
+            </div>
+          </section>
+        </div>
+        <div
+          class="
+            col-md-2
+            d-flex
+            flex-column
+            justify-content-center
+            align-items-center
+          "
+        >
+          <img
+            class="img-fluid mb-3 mt-3 dice"
+            style="
+              border-radius: 10px;
+              height: 100px;
+              width: 100px;
+              margin-left: 0px;
+              text-align: center;
+            "
+            src="assets/img/dice-1.png"
+          /><button
+            class="btn btn-outline-primary btn-lg mb-3 btn--roll"
+            type="button"
+            style="
+              color: rgb(0, 0, 0);
+              text-align: center;
+              border-radius: 10px;
+              border-style: none;
+              background: rgba(255, 255, 255, 0.65);
+            "
+          >
+            Roll</button
+          ><button
+            class="btn btn-outline-primary btn-lg mb-3 btn--hold"
+            type="button"
+            style="
+              color: rgb(0, 0, 0);
+              text-align: center;
+              border-radius: 10px;
+              border-style: none;
+              background: rgba(255, 255, 255, 0.65);
+              font-size: 20px;
+            "
+          >
+            Hold
+          </button>
+        </div>
+        <div
+          class="col-md-5 d-flex flex-shrink-1 justify-content-center"
+          style="
+            background: rgba(255, 255, 255, 0.5);
+            color: rgb(255, 255, 255);
+            border-radius: 20px;
+          "
+        >
+          <section class="player--1">
+            <h1
+              class="text-uppercase mt-3"
+              style="text-align: center; color: rgb(82, 72, 72)"
+            >
+              Player 2
+            </h1>
+            <p
+              id="score--1"
+              class="score"
+              style="text-align: center; font-size: 90px"
+            >
+              0
+            </p>
+            <div
+              style="
+                text-align: center;
+                border-radius: 20px;
+                background: rgba(85, 73, 231, 0.8);
+                margin-top: 30vh;
+                width: 200px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+              "
+            >
+              <p class="text-uppercase current-labelstyle="font-size: 20px">current</p>
+              <p id="current--1" class="current-score" style="font-size: 40px">0</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="howToPlay">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">PIG GAME</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p style="text-align: justify">
+              Each turn, a player repeatedly rolls a die until either a 1 is
+              rolled or the player decides to "hold":
+            </p>
+            <ul style="text-align: justify">
+              <li>
+                If the player rolls a 1, they score nothing and it becomes the
+                next player's turn.
+              </li>
+              <li>
+                If the player rolls any other number, it is added to their turn
+                total and the player's turn continues.
+              </li>
+              <li>
+                If a player chooses to "hold", their turn total is added to
+                their score, and it becomes the next player's turn.
+              </li>
+            </ul>
+            <p style="text-align: justify">
+              The first player to score 100 or more points wins.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/logic.js"></script>
+  </body>
+</html>

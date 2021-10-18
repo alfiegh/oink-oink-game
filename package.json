@@ -1,0 +1,14 @@
+{
+  "name": "piggame",
+  "version": "1.0.0",
+  "description": "simple-pig-game",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build index.html"
+  },
+  "author": "Alfonso",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}
